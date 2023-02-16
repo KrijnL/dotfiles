@@ -1,0 +1,5 @@
+# pack-refs with: peeled fully-peeled sorted 
+c43a123ed5b949e45a64603abb7682057f9834f0 refs/remotes/origin/alpha-theme
+e51921197e71e154e0dab3e618cee3bcaeff19ac refs/remotes/origin/alpha-ui
+f706984218e090e45ece1e49f10b0b96a45e7090 refs/remotes/origin/debug
+4781fcfea5ddc1a92d41b32dc325132ed6fce7a8 refs/remotes/origin/main
