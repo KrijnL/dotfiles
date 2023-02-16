@@ -1,0 +1,456 @@
+autoload -U +X bashcompinit && bashcompinit
+autoload -U +X compinit && compinit
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH="/home/krijn/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  vi-mode
+	git
+	colored-man-pages
+	colorize
+	git-flow
+	zsh-autosuggestions
+	)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+export EDITOR='nvim'
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+alias zshconfig="vim ~/.zshrc"
+alias zshrc='vim ~/.zshrc'
+alias loadzsh='source ~/.zshrc'
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# open cwd like on mac
+alias open='xdg-open'
+
+# l aliases
+alias l='exa -al --icons'
+alias ls='exa'
+alias ll='exa -l -g --icons'
+
+alias less='less -R'
+
+# cd aliases
+function cs() {
+    new_directory="$*";
+    if [ $# -eq 0 ]; then 
+        new_directory=${HOME};
+    fi;
+    builtin cd "${new_directory}" && l
+}
+alias cd..='cd ..'
+alias cd...='cd ../..'
+alias cd....='cd ../../..'
+alias cd..l='cd .. && l'
+alias repos='cd ~/repos'
+alias visuals='cd ~/visuals'
+alias frontend='cd ~/visuals/frontend'
+alias backend='cd ~/visuals/backend'
+alias proj='cd ~/projectjes'
+alias cio='cd ~/Cumulio'
+alias backedn='backend'
+
+# git aliases
+alias push='git push'
+alias pull='git pull'
+alias add.='git add .'
+alias status='git status'
+alias u='git add -u'
+alias gdiff='git diff'
+
+#function for commit alias
+com() {
+  git commit -m "$1"
+}
+
+checkout() {
+  git checkout "$1"
+}
+
+# Docker aliases
+alias dbuild='docker build'
+alias drun='docker run'
+alias dkill='docker kill'
+alias dps='docker ps'
+
+alias dlatest="dps | head -2 | tail -1 | awk '{print \$1}'"
+alias dkl='dkill `dlatest`'
+
+alias compose="docker-compose"
+alias dc='docker-compose'
+alias dcu='docker-compose up'
+alias dcd='docker-compose down'
+
+export PATH="/home/krijn/.local/bin:$PATH"
+export GTI_SPEED=4000
+export DOCKER_BUILDKIT=1
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# ZAP 
+alias zap='~/ZAP/zap.sh'
+
+# Postman
+alias postman='~/Desktop/Postman/Postman'
+
+# bat
+alias cat='bat'
+
+# Fuck
+alias fcuk='fuck'
+alias fukc='fuck'
+alias fuk='fuck'
+alias please='sudo $(fc -ln -1)'
+export PATH="$PATH:/opt/mssql-tools/bin"
+
+eval $(thefuck --alias)
+
+# typo/lazy aliases
+alias code.='code .'
+alias code,='code .'
+alias coed='code .'
+alias code='code .'
+export EDITOR=/usr/local/bin/nvim
+
+# PSQL aliases
+alias db='psql -h postgres.cumul.io -d cumulio -U krijnluijendijk'
+alias dbadmin='psql -h postgres.cumul.io -d cumulio -U krijnluijendijk_admin'
+alias usdb='psql -h postgres.us.cumul.io -d cumulio -U cumulio'
+
+# ssh aliases
+alias jenkins='ssh jenkins'
+alias arwen='ssh arwen'
+
+
+# add Pulumi to the PATH
+export PATH=$PATH:$HOME/.pulumi/bin:/usr/local/go/bin
+export SSLKEYLOGFILE=~/.ssl-key.log
+
+zle-line-init() {
+ zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+ echo -ne "\e[0 q"
+}
+
+# Kubectl
+source <(kubectl completion zsh)
+alias k=kubectl
+# complete -F __start_kubectl k
+
+# Docker
+alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
+alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
+
+# vim
+alias vim='nvim'
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init - zsh)"
+
+# Use ripgrep in vim fzf
+if type rg &> /dev/null; then
+    export FZF_DEFAULT_COMMAND='rg --files'
+      export FZF_DEFAULT_OPTS='-m --height 50% --border'
+fi
+
+# add source-highlighting to less
+export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
+export LESS=' -R '
+
+# use vim instead of less
+alias vmore="vim -u ~/.vimrc.more -"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/krijn/.sdkman"
+[[ -s "/home/krijn/.sdkman/bin/sdkman-init.sh" ]] && source "/home/krijn/.sdkman/bin/sdkman-init.sh"
+export PATH=/usr/local/apache-maven-3.6.3/bin:/home/krijn/go/bin:$PATH
+
+export COMPOSE_DOCKER_CLI_BUILD=1
+compctl -g '~/.teamocil/*(:t:r)' teamocil
+
+. $HOME/.asdf/asdf.sh
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
+
+#compdef _cmctl cmctl
+
+# zsh completion for cmctl                                -*- shell-script -*-
+
+__cmctl_debug()
+{
+    local file="$BASH_COMP_DEBUG_FILE"
+    if [[ -n ${file} ]]; then
+        echo "$*" >> "${file}"
+    fi
+}
+
+_cmctl()
+{
+    local shellCompDirectiveError=1
+    local shellCompDirectiveNoSpace=2
+    local shellCompDirectiveNoFileComp=4
+    local shellCompDirectiveFilterFileExt=8
+    local shellCompDirectiveFilterDirs=16
+
+    local lastParam lastChar flagPrefix requestComp out directive comp lastComp noSpace
+    local -a completions
+
+    __cmctl_debug "\n========= starting completion logic =========="
+    __cmctl_debug "CURRENT: ${CURRENT}, words[*]: ${words[*]}"
+
+    # The user could have moved the cursor backwards on the command-line.
+    # We need to trigger completion from the $CURRENT location, so we need
+    # to truncate the command-line ($words) up to the $CURRENT location.
+    # (We cannot use $CURSOR as its value does not work when a command is an alias.)
+    words=("${=words[1,CURRENT]}")
+    __cmctl_debug "Truncated words[*]: ${words[*]},"
+
+    lastParam=${words[-1]}
+    lastChar=${lastParam[-1]}
+    __cmctl_debug "lastParam: ${lastParam}, lastChar: ${lastChar}"
+
+    # For zsh, when completing a flag with an = (e.g., cmctl -n=<TAB>)
+    # completions must be prefixed with the flag
+    setopt local_options BASH_REMATCH
+    if [[ "${lastParam}" =~ '-.*=' ]]; then
+        # We are dealing with a flag with an =
+        flagPrefix="-P ${BASH_REMATCH}"
+    fi
+
+    # Prepare the command to obtain completions
+    requestComp="${words[1]} __complete ${words[2,-1]}"
+    if [ "${lastChar}" = "" ]; then
+        # If the last parameter is complete (there is a space following it)
+        # We add an extra empty parameter so we can indicate this to the go completion code.
+        __cmctl_debug "Adding extra empty parameter"
+        requestComp="${requestComp} \"\""
+    fi
+
+    __cmctl_debug "About to call: eval ${requestComp}"
+
+    # Use eval to handle any environment variables and such
+    out=$(eval ${requestComp} 2>/dev/null)
+    __cmctl_debug "completion output: ${out}"
+
+    # Extract the directive integer following a : from the last line
+    local lastLine
+    while IFS='\n' read -r line; do
+        lastLine=${line}
+    done < <(printf "%s\n" "${out[@]}")
+    __cmctl_debug "last line: ${lastLine}"
+
+    if [ "${lastLine[1]}" = : ]; then
+        directive=${lastLine[2,-1]}
+        # Remove the directive including the : and the newline
+        local suffix
+        (( suffix=${#lastLine}+2))
+        out=${out[1,-$suffix]}
+    else
+        # There is no directive specified.  Leave $out as is.
+        __cmctl_debug "No directive found.  Setting do default"
+        directive=0
+    fi
+
+    __cmctl_debug "directive: ${directive}"
+    __cmctl_debug "completions: ${out}"
+    __cmctl_debug "flagPrefix: ${flagPrefix}"
+
+    if [ $((directive & shellCompDirectiveError)) -ne 0 ]; then
+        __cmctl_debug "Completion received error. Ignoring completions."
+        return
+    fi
+
+    while IFS='\n' read -r comp; do
+        if [ -n "$comp" ]; then
+            # If requested, completions are returned with a description.
+            # The description is preceded by a TAB character.
+            # For zsh's _describe, we need to use a : instead of a TAB.
+            # We first need to escape any : as part of the completion itself.
+            comp=${comp//:/\\:}
+
+            local tab=$(printf '\t')
+            comp=${comp//$tab/:}
+
+            __cmctl_debug "Adding completion: ${comp}"
+            completions+=${comp}
+            lastComp=$comp
+        fi
+    done < <(printf "%s\n" "${out[@]}")
+
+    if [ $((directive & shellCompDirectiveNoSpace)) -ne 0 ]; then
+        __cmctl_debug "Activating nospace."
+        noSpace="-S ''"
+    fi
+
+    if [ $((directive & shellCompDirectiveFilterFileExt)) -ne 0 ]; then
+        # File extension filtering
+        local filteringCmd
+        filteringCmd='_files'
+        for filter in ${completions[@]}; do
+            if [ ${filter[1]} != '*' ]; then
+                # zsh requires a glob pattern to do file filtering
+                filter="\*.$filter"
+            fi
+            filteringCmd+=" -g $filter"
+        done
+        filteringCmd+=" ${flagPrefix}"
+
+        __cmctl_debug "File filtering command: $filteringCmd"
+        _arguments '*:filename:'"$filteringCmd"
+    elif [ $((directive & shellCompDirectiveFilterDirs)) -ne 0 ]; then
+        # File completion for directories only
+        local subDir
+        subdir="${completions[1]}"
+        if [ -n "$subdir" ]; then
+            __cmctl_debug "Listing directories in $subdir"
+            pushd "${subdir}" >/dev/null 2>&1
+        else
+            __cmctl_debug "Listing directories in ."
+        fi
+
+        local result
+        _arguments '*:dirname:_files -/'" ${flagPrefix}"
+        result=$?
+        if [ -n "$subdir" ]; then
+            popd >/dev/null 2>&1
+        fi
+        return $result
+    else
+        __cmctl_debug "Calling _describe"
+        if eval _describe "completions" completions $flagPrefix $noSpace; then
+            __cmctl_debug "_describe found some completions"
+
+            # Return the success of having called _describe
+            return 0
+        else
+            __cmctl_debug "_describe did not find completions."
+            __cmctl_debug "Checking if we should do file completion."
+            if [ $((directive & shellCompDirectiveNoFileComp)) -ne 0 ]; then
+                __cmctl_debug "deactivating file completion"
+
+                # We must return an error code here to let zsh know that there were no
+                # completions found by _describe; this is what will trigger other
+                # matching algorithms to attempt to find completions.
+                # For example zsh can match letters in the middle of words.
+                return 1
+            else
+                # Perform file completion
+                __cmctl_debug "Activating file completion"
+
+                # We must return the result of this command, so it must be the
+                # last command, or else we must store its result to return it.
+                _arguments '*:filename:_files'" ${flagPrefix}"
+            fi
+        fi
+    fi
+}
+
+# don't run the completion function when being source-ed or eval-ed
+if [ "$funcstack[1]" = "_cmctl" ]; then
+	_cmctl
+fi
+
+
+complete -o nospace -C /usr/bin/terraform terraform
