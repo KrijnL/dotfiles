@@ -1,0 +1,4 @@
+04cdfafee557c84e01724de8c6a4f24d40f7414f		branch 'main' of https://github.com/sindrets/diffview.nvim
+df94eeee90f2483e3c30b1b368b2e6e0c487aa7b	not-for-merge	branch 'feat/async-buf-creation' of https://github.com/sindrets/diffview.nvim
+59d863a8cf7dbd7f4d7b6a6c4737857df68e3df4	not-for-merge	branch 'feat/file-tree' of https://github.com/sindrets/diffview.nvim
+e6698b80af9908164bfdf88ad66f8ac9e4d82fad	not-for-merge	branch 'feat/merge-tool' of https://github.com/sindrets/diffview.nvim

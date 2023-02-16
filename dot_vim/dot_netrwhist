@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/etc/influxdb'
+let g:netrw_dirhist_2='/home/krijn/projectjes/Rust/learn/book/functions/src'
+let g:netrw_dirhist_3='/home/krijn/repos/cumul.io-plugins/build'
+let g:netrw_dirhist_4='/home/krijn/.ssh'

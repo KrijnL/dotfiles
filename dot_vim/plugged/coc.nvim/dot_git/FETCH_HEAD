@@ -1,0 +1,5 @@
+2a62affa46a82b32042e0cad459e60073f199279		branch 'release' of https://github.com/neoclide/coc.nvim
+8427bdda7aac08d73f7d301263e356d6e3c8a6f2	not-for-merge	branch 'lua' of https://github.com/neoclide/coc.nvim
+df659ccdd0325e29a9c5c0b2e76750c632b53df0	not-for-merge	branch 'master' of https://github.com/neoclide/coc.nvim
+d0ace6360b8af6f053f1c501834d69c5ba459628	not-for-merge	tag 'v0.0.81' of https://github.com/neoclide/coc.nvim
+7bc1f1b3dfb4838b1f6c4f046fa4d196818d92c9	not-for-merge	tag 'v0.0.82' of https://github.com/neoclide/coc.nvim

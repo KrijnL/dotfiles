@@ -1,0 +1,13 @@
+8a5f7199649d56a92474676c9cf626204e3e8bcb		branch 'master' of https://github.com/junegunn/fzf
+27daf0d1f6b84c1ec6a65dfa1c98cc11060a8567	not-for-merge	branch 'dependabot/github_actions/actions/checkout-2541b1294d2704b0964813337f33b291d3f8596b' of https://github.com/junegunn/fzf
+da41be68a748c4ac089f7400ed7876f71513dd79	not-for-merge	branch 'dependabot/github_actions/actions/setup-go-3.2.1' of https://github.com/junegunn/fzf
+58b3b255c6cd90f2894681a52549633da9a1343b	not-for-merge	branch 'dependabot/github_actions/github/codeql-action-2.1.20' of https://github.com/junegunn/fzf
+8db977a6365039786a8a945a8b2b9d4696e308a0	not-for-merge	branch 'dependabot/github_actions/ruby/setup-ruby-1.115.2' of https://github.com/junegunn/fzf
+e62a7056278866a31c41aa2f2f8b9b619271796c	not-for-merge	branch 'dependabot/go_modules/github.com/mattn/go-isatty-0.0.16' of https://github.com/junegunn/fzf
+cc6f2315295fa862a33ae1202d0cf7eb3d1078fa	not-for-merge	branch 'dependabot/go_modules/github.com/rivo/uniseg-0.3.4' of https://github.com/junegunn/fzf
+8e5cf265635a0b9a6bbb6c2ae93abb35b904c288	not-for-merge	branch 'dependabot/go_modules/github.com/saracen/walker-0.1.3' of https://github.com/junegunn/fzf
+70529878e20cf0367ca25b0aa9dbf1f51062f5e0	not-for-merge	branch 'devel' of https://github.com/junegunn/fzf
+509c14fd47090bacb4d5fa0d983318f5550b1971	not-for-merge	tag '0.29.0' of https://github.com/junegunn/fzf
+7c954dc5f628f74cb464484cca9b56d282fdaa20	not-for-merge	tag '0.30.0' of https://github.com/junegunn/fzf
+883f593969a552eb8ef6bad87e752f20bccd5d9b	not-for-merge	tag '0.32.0' of https://github.com/junegunn/fzf
+ccb57409afc9fe16a26f254bf1d40f7f11dc50aa	not-for-merge	tag '0.32.1' of https://github.com/junegunn/fzf

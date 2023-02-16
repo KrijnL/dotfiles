@@ -1,0 +1,4 @@
+0000000000000000000000000000000000000000 0480cbd9976529f69aeb692d8e1834d3edde90c5 KrijnL <krijnzeger@gmail.com> 1637847008 +0100	clone: from https://github.com/neoclide/coc.nvim.git
+0480cbd9976529f69aeb692d8e1834d3edde90c5 287c743c9f227fdf0e1db452bbb8ae3c5caffc36 KrijnL <krijnzeger@gmail.com> 1637847008 +0100	checkout: moving from master to release
+287c743c9f227fdf0e1db452bbb8ae3c5caffc36 287c743c9f227fdf0e1db452bbb8ae3c5caffc36 KrijnL <krijnzeger@gmail.com> 1661420251 +0200	checkout: moving from release to release
+287c743c9f227fdf0e1db452bbb8ae3c5caffc36 2a62affa46a82b32042e0cad459e60073f199279 KrijnL <krijnzeger@gmail.com> 1661420251 +0200	merge origin/release: Fast-forward
