@@ -211,16 +211,6 @@ alias coed='code .'
 alias code='code .'
 export EDITOR=/usr/local/bin/nvim
 
-# PSQL aliases
-alias db='psql -h postgres.cumul.io -d cumulio -U krijnluijendijk'
-alias dbadmin='psql -h postgres.cumul.io -d cumulio -U krijnluijendijk_admin'
-alias usdb='psql -h postgres.us.cumul.io -d cumulio -U cumulio'
-
-# ssh aliases
-alias jenkins='ssh jenkins'
-alias arwen='ssh arwen'
-
-
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin:/usr/local/go/bin
 export SSLKEYLOGFILE=~/.ssl-key.log
